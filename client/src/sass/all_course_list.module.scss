@@ -1,0 +1,19 @@
+.container{
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	min-height: calc(100vh - 50px);
+	justify-content: center;
+	align-items: center; 
+}
+.header{
+	display: flex;
+	border-radius: 0.5rem;
+	color: #448ddb;
+	padding: 1rem;
+	// box-shadow: inset 0px 0px 20px 0px #448ddb;
+}
+.course_list{
+	display: flex;
+	flex-wrap: wrap;
+}

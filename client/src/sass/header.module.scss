@@ -1,0 +1,29 @@
+.container{
+	position: sticky;
+	display: flex;
+	justify-content: space-around;
+	height: 50px;
+	align-items: center;
+	box-shadow: 0px 0px 4px 0px #ccc;
+	top: 0;
+	z-index: 100;
+	background: #fff;
+}
+.logo{
+	font-size: 1.5rem;
+	font-weight: 500;
+	font-style: normal;
+	color: #448ddb;
+}
+.nav{
+	display: flex;
+}
+.btn{
+	outline: none;
+	border: 2px solid #448ddb;
+	background: none;
+	color: #448ddb;
+	padding: 0.5rem;
+	font-size: 1rem;
+	margin: 0rem 0.5rem;
+}
