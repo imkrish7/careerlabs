@@ -3,15 +3,15 @@ const Schema = mongoose.Schema;
 
 
 const courseShema = new Schema({
-	course_Id: String,
-	course_name: String,
-	provider: String,
-	universities_or_institution: String,
-	parent_Subject: String,
-	child_Subject: String,
-	url: String,
-	length: Number,
-	video_url: String
+	"Course Id": String,
+	"Course Name": String,
+	"Provider": String,
+	"Universities/Institution": String,
+	"Parent Subject": String,
+	"Child Subject": String,
+	"Url": String,
+	"Length": Number,
+	"Video(url)": String
 },{ timestamps: true});
 
 const Course = mongoose.model('Course', courseShema);

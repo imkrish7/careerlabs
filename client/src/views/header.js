@@ -11,10 +11,6 @@ class Header extends Component{
 				<div className={Style.logo}>
 					Course
 				</div>
-				<nav className={Style.nav}>
-					<Link to="/signin"><button className={Style.btn}>SignIn</button></Link>
-					<Link to="/signup"><button className={Style.btn}>SignUp</button></Link>
-				</nav>
 			</div>
 		)
 	}

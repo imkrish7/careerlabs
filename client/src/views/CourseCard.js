@@ -50,6 +50,17 @@ class CourseCard extends Component{
 							{this.props.data['Next Session Date']}
 						</span>
 					</div>
+					<div className={Style.field}>
+						{/* <span className={Style.field_name}>Url:</span> */}
+						<a target="_blank" href={this.props.data['Url']} className={Style.fiedl_value}>
+							Course Url
+						</a>
+					</div>
+					<div className={Style.field}>
+						<a target="_blank" href={this.props.data['Video(Url)']} className={Style.fiedl_value}>
+							Video  Url
+						</a>
+					</div>
 				</div>
 			</div>;
 	}
