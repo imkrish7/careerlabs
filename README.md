@@ -11,7 +11,6 @@ npm install
 
 npm run client-install
 
-// Run redis server before
 
 // Run the server and Client with concurrently
 
