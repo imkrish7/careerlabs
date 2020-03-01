@@ -9,24 +9,46 @@ class CourseCard extends Component{
 	render(){
 		return <div className={Style.card}>
 				<div className={Style.header}>
-					<h1 className={Style.header_text}>Course 1</h1>
+					<h1 className={Style.header_text}>
+						{this.props.data['Course Name']}
+					</h1>
 				</div>
 				<div className={Style.course_info}>
 					<div className={Style.field}>
-						<span className={Style.field_name}>Provider</span>
-						<span className={Style.fiedl_value}>Udacity</span>
+						<span className={Style.field_name}>Provider :</span>
+						<span className={Style.fiedl_value}>
+							{this.props.data['Provider']}
+						</span>
 					</div>
 					<div className={Style.field}>
-						<span className={Style.field_name}>Universities</span>
-						<span className={Style.fiedl_value}>Stanford University</span>
+						<span className={Style.field_name}>Universities :</span>
+						<span className={Style.fiedl_value}>
+							{this.props.data['Universities/Institutions']}
+						</span>
 					</div>
 					<div className={Style.field}>
-						<span className={Style.field_name}>Parent Subject</span>
-						<span className={Style.fiedl_value}>Computer Science</span>
+						<span className={Style.field_name}>Parent Subject :</span>
+						<span className={Style.fiedl_value}>
+							{this.props.data['Parent Subject']}
+						</span>
 					</div>
 					<div className={Style.field}>
-						<span className={Style.field_name}>Child Subject</span>
-						<span className={Style.fiedl_value}>Artificial Intelligence</span>
+						<span className={Style.field_name}>Child Subject :</span>
+						<span className={Style.fiedl_value}>
+							{this.props.data['Child Subject']}
+						</span>
+					</div>
+					<div className={Style.field}>
+						<span className={Style.field_name}>Length :</span>
+						<span className={Style.fiedl_value}>
+							{this.props.data['Length']}
+						</span>
+					</div>
+					<div className={Style.field}>
+						<span className={Style.field_name}>Next Session Date :</span>
+						<span className={Style.fiedl_value}>
+							{this.props.data['Next Session Date']}
+						</span>
 					</div>
 				</div>
 			</div>;

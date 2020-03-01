@@ -16,4 +16,47 @@
 .course_list{
 	display: flex;
 	flex-wrap: wrap;
+	justify-content: center;
+} 
+
+.options{
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+}
+.select{
+	padding: 1rem 0.5rem;
+	background: transparent;
+	display: flex;
+	border: none;
+	border-radius: 0.5rem;
+	font-size: 1rem;
+	box-shadow: -4px -4px 10px rgba(255,255,255,1), inset 4px 4px 10px rgba(0,0,0,0.05), inset -4px -4px 10px rgba(255,255,255,1), 4px 4px 10px rgba(0,0,0,0.05);
+}
+
+
+.pagination{
+	width: 100%;
+	display: flex;
+	justify-content: flex-end;
+}
+
+.pagination_options{
+	display: flex;
+}
+.btn{
+	border: none;
+	color: #fff;
+	margin:0rem 0.5rem;
+	background: #448ddb;
+	padding: 0.5rem;
+	border-radius: 0.2rem;
+	box-shadow: inset 0px 0px 4px 0px #448ddb;
+}
+
+.page_number{
+	display: flex;
+	align-items: center;
+	font-size: 1rem;
+	font-weight: 900;
 }
