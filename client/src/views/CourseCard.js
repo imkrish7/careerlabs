@@ -41,24 +41,24 @@ class CourseCard extends Component{
 					<div className={Style.field}>
 						<span className={Style.field_name}>Length :</span>
 						<span className={Style.fiedl_value}>
-							{this.props.data['Length']}
+							{this.props.data['Length'] || "Not Available"}
 						</span>
 					</div>
 					<div className={Style.field}>
 						<span className={Style.field_name}>Next Session Date :</span>
 						<span className={Style.fiedl_value}>
-							{this.props.data['Next Session Date']}
+							{this.props.data['Next Session Date'] || "Not Available"}
 						</span>
 					</div>
 					<div className={Style.field}>
-						{/* <span className={Style.field_name}>Url:</span> */}
+						
 						<a target="_blank" href={this.props.data['Url']} className={Style.fiedl_value}>
-							Course Url
+							Course link
 						</a>
 					</div>
 					<div className={Style.field}>
 						<a target="_blank" href={this.props.data['Video(Url)']} className={Style.fiedl_value}>
-							Video  Url
+							Video  intro
 						</a>
 					</div>
 				</div>

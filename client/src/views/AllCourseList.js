@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { validDate } from '../Utils/dateUtil';
 import { getList } from '../actions/userActions';
 import CourseCard from './CourseCard';
 import Style from '../sass/all_course_list.module.scss';
@@ -89,48 +90,8 @@ class AllCourseList extends Component {
 					let validList = list.filter(data => data['Next Session Date'] != 'Self paced' || data['Next Session Date'] != '');
 					this.setState({ courseList: [...invalidList,...validList.sort((a, b) => {
 								if (a['Next Session Date'] != 'Self paced' && a['Next Session Date'] != '' && b['Next Session Date'] != 'Self paced' && b['Next Session Date'] != '') {
-									let date1 = a['Next Session Date'].toString().split(', ');
-									let date2 = b['Next Session Date'].toString().split(', ');
-									let year1 = date1[2] || date1[1];
-									let year2 = date2[2] || date2[1];
-									let dayMonth1 = date1[0].split(' ');
-									let dayMonth2 = date2[0].split(' ');
-									let month1;
-									let month2;
-									let day1;
-									let day2;
-									if (dayMonth1.length == 2) {
-										month1 = dayMonth1[1];
-										if (dayMonth1[0].split('th').length == 2) {
-											day1 = dayMonth1[0].split('th')[0];
-										}
-										if (dayMonth1[0].split('st') == 2) {
-											day1 = dayMonth1[0].split('st')[0];
-										}
-										if (dayMonth1[0].split('nd').length == 2) {
-											day1 = dayMonth1[0].split('nd')[0];
-										}
-									} else {
-										month1 = dayMonth1[0];
-										day1 = '01';
-									}
-									if (dayMonth2.length == 2) {
-										month2 = dayMonth2[1];
-										if (dayMonth2[0].split('th').length == 2) {
-											day2 = dayMonth2[0].split('th')[0];
-										}
-										if (dayMonth2[0].split('st') == 2) {
-											day2 = dayMonth2[0].split('st')[0];
-										}
-										if (dayMonth1[0].split('nd').length == 2) {
-											day2 = dayMonth2[0].split('nd')[0];
-										}
-									} else {
-										month2 = dayMonth2[0];
-										day2 = '01';
-									}
-									let fullDate1 = new Date(month1 + ' ' + day1 + ', ' + year1);
-									let fullDate2 = new Date(month2 + ' ' + day2 + ', ' + year2);
+									let fullDate1 = validDate(a['Next Session Date']);
+									let fullDate2 = validDate(b['Next Session Date']);
 									if (fullDate1 > fullDate2) {
 										return 1;
 									}
@@ -200,7 +161,7 @@ class AllCourseList extends Component {
 						value={this.state.filter}
 						onChange={this.handleChange}
 					>
-						<option value="default">Select</option>
+						<option value="default">Select Providers</option>
 						{this.state.providers.map((provider, ind) => {
 							return (
 								<option key={ind} value={provider}>
@@ -210,7 +171,7 @@ class AllCourseList extends Component {
 						})}
 					</select>
 					<select className={Style.select} name="sort" value={this.state.sort} onChange={this.handleSort}>
-						<option value="default">Select</option>
+						<option value="default">Sort</option>
 						<option value="length">Length</option>
 						<option value="nextSession">Next Session Date</option>
 					</select>
